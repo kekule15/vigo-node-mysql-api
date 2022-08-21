@@ -28,6 +28,7 @@ require("./routes/user_vendor_routes")(app);
 require("./routes/blogpost_routes")(app);
 require("./routes/gift_routes")(app);
 require("./routes/comment_routes")(app);
+require("./routes/transaction_routes")(app);
 
 //server
 app.listen(PORT, (err) => {

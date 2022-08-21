@@ -75,11 +75,11 @@ Comment.findByPostId = (id, result) => {
       }
   
       if (res.length) {
-        console.log("found comment: ", res[0]);
-        result(null, res[0]);
+        console.log("found comment: ", res);
+        result(null, res);
         return;
       }
-  
+
       // not found comment with the id
       result({ kind: "not_found" }, null);
     });

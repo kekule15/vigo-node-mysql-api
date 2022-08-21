@@ -1,10 +1,9 @@
 module.exports = (app) => {
     const gifts = require("../controllers/gift_controller");
-    const upload = require("../middleware/multer");
     var router = require("express").Router();
   
     // Create a new gift
-    router.post("/create",  gifts.create);
+    router.post("/send",  gifts.create);
   
     // Retrieve all gifts
     router.get("/getAllGifts", gifts.findAll);

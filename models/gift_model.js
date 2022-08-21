@@ -3,6 +3,7 @@ const sql = require("../config/db-config");
 
 // User constructor
 const GiftModel = function (gift) {
+  
   this.receiverId = gift.receiverId;
   this.name = gift.name;
   this.image = gift.image;
@@ -12,6 +13,7 @@ const GiftModel = function (gift) {
   this.senderEmail = gift.senderEmail;
   this.quantity = gift.quantity;
   this.createdAt = gift.createdAt;
+  this.userId = gift.userId;
 };
 const tableName = "gift".toString();
 GiftModel.create = async(newgiftmodel, result) => {
@@ -53,7 +55,7 @@ GiftModel.create = async(newgiftmodel, result) => {
           );
         } else {
         
-            var myquery = "CREATE TABLE gift (id INT AUTO_INCREMENT PRIMARY KEY, receiverId INT(11), name VARCHAR(255), image VARCHAR(200), price INT(20), senderName VARCHAR(20), senderImage VARCHAR(255), senderEmail VARCHAR(255), quantity INT(20), createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, )";
+          var myquery = `CREATE TABLE ${tableName} (id INT AUTO_INCREMENT PRIMARY KEY, recieverId INT(255), name VARCHAR(255), image VARCHAR(200), price INT(200), amount INT(255), senderName VARCHAR(255), senderImage VARCHAR(255), senderEmail VARCHAR(255), quantity INT(50), createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, userId INT(50), )`;
             console.log('my data');
             sql.query(myquery, function (err, result) {
                 if (err) throw err;

@@ -74,12 +74,12 @@ exports.login = (req, res) => {
     });
 };
 
-// Retrieve all BlogPost from the database.
+// Retrieve all users from the database.
 exports.findAll = (req, res) => {
   BlogPost.getAll((err, data) => {
     if (err)
       res.status(500).send({
-        message: err.message || "Some error occurred while retrieving BlogPost.",
+        message: err.message || "Some error occurred while retrieving users.",
       });
     else res.send(data);
   });
