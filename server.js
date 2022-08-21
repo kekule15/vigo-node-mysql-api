@@ -1,9 +1,9 @@
 const express = require("express");
 require("dotenv").config();
 const db = require("./config/db-config");
+const blogPost = require("./controllers/blog_controller");
 
 const app = express();
-
 
 app.use(express.json());
 
@@ -21,12 +21,13 @@ db.connect(function (err) {
 });
 
 
+
 // routes
+
 require("./routes/user_vendor_routes")(app);
 require("./routes/blogpost_routes")(app);
 require("./routes/gift_routes")(app);
-
-
+require("./routes/comment_routes")(app);
 
 //server
 app.listen(PORT, (err) => {
