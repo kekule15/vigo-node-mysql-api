@@ -5,7 +5,6 @@ const upload = require("./middleware/multer");
 const cors = require("cors");
 
 const db = require("./config/db-config");
-const userRouter = require('./routes/user_routes')
 
 const app = express();
 app.use(express.json());
@@ -48,6 +47,7 @@ app.post("/uploadImage", upload.single("image"), async(req, res) => {
 // app.use('/api/auth', userRouter)
 require("./routes/user_vendor_routes")(app);
 require("./routes/blogpost_routes")(app);
+require("./routes/gift_routes")(app);
 
 //testing api
 

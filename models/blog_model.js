@@ -16,7 +16,6 @@ const BlogPost = function (blogPost) {
   this.createdAt = blogPost.createdAt;
 };
 const tableName = 'blogpost'.toString();
-const vendorTable = 'vendors'.toString();
 
 
 BlogPost.create = (newBlogPost, result) => {
