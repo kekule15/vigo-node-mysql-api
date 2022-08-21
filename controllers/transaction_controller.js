@@ -1,42 +1,5 @@
 const Transaction = require("../models/transaction_model");
 
-// Create and Save a new User
-// exports.create = async (req, res) => {
-//   // Validate request
-//   if (!req.body) {
-//     res.status(400).send({
-//       message: "Content can not be empty!",
-//     });
-//   }
-
-  // Create a Transaction
-//   const model = new Transaction({
-//     name: req.body.name,
-//     email: req.body.email,
-//     phone: req.body.phone,
-//     image: url,
-//     address: req.body.address,
-//     password: CryptoJS.AES.encrypt(req.body.password, "secrete").toString(),
-//     wallet: 0,
-//     createdAt: new Date().toISOString().slice(0, -1).replace("T", " "),
-//   });
-
-//   // Save Transaction in the database
-//   Transaction.create(model, (err, data) => {
-//     if (err)
-//       res.status(500).send({
-//         message: err.message || "Some error occurred while creating the User.",
-//       });
-//     else
-//       res.send({
-//         message: "Transaction registered Successfully",
-//         data: data,
-//       });
-//   });
-// };
-
-
-
 // Retrieve all Transactions from the database.
 exports.findAll = (req, res) => {
     Transaction.getAll((err, data) => {

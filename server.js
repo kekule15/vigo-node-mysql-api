@@ -1,7 +1,6 @@
 const express = require("express");
 require("dotenv").config();
 const db = require("./config/db-config");
-const blogPost = require("./controllers/blog_controller");
 
 const app = express();
 
